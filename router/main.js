@@ -14,12 +14,12 @@ module.exports = function(app, fs)
          console.log('Express server listening on port ' + app.get('port'));
     });
     
-    app.get('/image/:name',function (req,res){     
+    app.get('/public/image/:name',function (req,res){     
     var filename = req.params.name;
-    console.log(__dirname+'/images/'+filename);
-    fs.exists(__dirname+'/images/'+filename, function (exists) {
+    console.log(__dirname+'/public/images/'+filename);
+    fs.exists(__dirname+'/public/images/'+filename, function (exists) {
         if (exists) {
-            fs.readFile(__dirname+'/images/'+filename, function (err,data){
+            fs.readFile(__dirname+'/public/images/'+filename, function (err,data){
                     res.end(data);
                 });
             } else {
