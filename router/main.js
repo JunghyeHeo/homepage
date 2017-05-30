@@ -3,16 +3,16 @@ module.exports = function(app, fs)
 {
 
      app.get('/',function(req,res){
-         fs.readFile('body.html', function(error, data) {
-             response.writeHead(200,{'content-type':'text/html'});
-             response.end(data);
+         fs.readFile(__dirname + "/../view/body.html", function(err, data) {
+             res.writeHead(200,{'content-type':'text/html'});
+             res.end(data);
          })
      });
 
     app.get('/img',function(req,res){
-         fs.readFile('signin.jpg', function(error, data) {
-             response.writeHead(200,{'content-type':'text/html'});
-             response.end(data);
+         fs.readFile(__dirname + "/../view/signin.jpg", function(err, data) {
+             res.writeHead(200,{'content-type':'text/html'});
+             res.end(data);
          })
      });
     
