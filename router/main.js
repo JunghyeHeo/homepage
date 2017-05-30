@@ -3,12 +3,19 @@ module.exports = function(app, fs)
 {
 
      app.get('/',function(req,res){
-         res.render('index', {
-             title: "MY HOMEPAGE",
-             length: 5
+         fs.readFile('body.html', function(error, data) {
+             response.writeHead(200,{'content-type':'text/html'});
+             response.end(data);
          })
      });
 
+    app.get('/img',function(req,res){
+         fs.readFile('signin.jpg', function(error, data) {
+             response.writeHead(200,{'content-type':'text/html'});
+             response.end(data);
+         })
+     });
+    
     app.get('/list', function (req, res) {
        fs.readFile( __dirname + "/../data/user.json", 'utf8', function (err, data) {
            console.log( data );
