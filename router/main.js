@@ -4,21 +4,23 @@ module.exports = function(app, fs)
 
      app.get('/',function(req,res){
          fs.readFile(__dirname + "/../view/body.html", function(err, data) {
-             res.writeHead(200,{'content-type':'text/html'});
+             console.log("Hello");
+             //res.writeHead(200,{'content-type':'text/html'});
              res.end(data);
          })
      });
 
     app.get('/img',function(req,res){
          fs.readFile(__dirname + "/../view/img/signin.jpg", function(err, data) {
-             res.writeHead(200,{'content-type':'text/html'});
+             console.log("222");
+             //res.writeHead(200,{'content-type':'text/html'});
              res.end(data);
          })
      });
     
     app.get('/list', function (req, res) {
        fs.readFile( __dirname + "/../data/user.json", 'utf8', function (err, data) {
-           console.log( data );
+           console.log(data);
            res.end( data );
        });
     });
