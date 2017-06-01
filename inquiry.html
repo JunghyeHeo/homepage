@@ -42,7 +42,11 @@
               
           <p class="hn">찾아 오시는 길</p>
           
-          <table cellpadding="0" cellspacing="0" width="462"> <tr> <td style="border:1px solid #cecece;"><a href="http://map.naver.com/?mpx=08410680%3A35.2450682%2C129.0868868%3AZ11%3A0.0209730%2C0.0099581&searchCoord=38e24fc5d619fb4d0998642ad0426579937245dfa88a889e05143664aa01c946&query=67aA7IKw64yA7ZWZ6rWQ&menu=location&tab=1&lng=8f8f1c0ab8a24022ec34c8523247bf49&mapMode=0&lat=1373dcc0420356d208c3f3041503d086&dlevel=11&enc=b64" target="_blank"><img src="http://prt.map.naver.com/mashupmap/print?key=p1496342013389_1144680351" width="460" height="340" alt="지도 크게 보기" title="지도 크게 보기" border="0" style="vertical-align:top;"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2017.6.2</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="http://map.naver.com/?mpx=08410680%3A35.2450682%2C129.0868868%3AZ11%3A0.0209730%2C0.0099581&searchCoord=38e24fc5d619fb4d0998642ad0426579937245dfa88a889e05143664aa01c946&query=67aA7IKw64yA7ZWZ6rWQ&menu=location&tab=1&lng=8f8f1c0ab8a24022ec34c8523247bf49&mapMode=0&lat=1373dcc0420356d208c3f3041503d086&dlevel=11&enc=b64" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
+          <div id="map" style="width: 300px; height=300px;"></div>
+          <script>
+              var map = new naver.maps.Map('map', {center: new naver.maps.LatLng(37.6132884, 127139476), zoom:11})
+              var marker = new naver.maps.Marmer({position: new naver.maps.LatLng(37.6132884, 127139476), map: map});
+          </script>
           
           
       </div>
