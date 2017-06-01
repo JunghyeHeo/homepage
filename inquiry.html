@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=n49C_79kOHWG_lD2SNfX"></script>
+    
+    <style>@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+        p { font-size: 24px; }
+        .hn { font-family: 'Hanna'; }
+    </style>
+    
+</head>
+<body>
+<!-- 상단 네비게이션 바 -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- 브라우저가 좁아졋을때 나오는 버튼(클릭시 메뉴출력) -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HOME & SHOPPING</a>    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/main">홈으로</a></li>
+            <li><a href="/content">CONTENT</a></li>
+            <li><a href="/inquiry">문의하기</a></li>
+          </ul>
+        </div>
+      </div>
+</div>
+<div class="container">
+      <div style="margin-top: 100px;">
+              
+          <p class="hn">찾아 오시는 길</p>
+          
+                  <div id="map" style="border:1px solid #000;"></div>
+        <script type="text/javascript">
+        //http://map.naver.com/api/geocode.php?key=ac4836e43fc3046ea25c0e7c6db02be3&query=울산광역시 북구 시례동 247-2
+          var oPoint = new nhn.api.map.TM128(522180, 334652);
+          var defaultLevel = 11;
+          var oMap = new nhn.api.map.Map(document.getElementById("map"), { 
+              point : oPoint,
+              zoom : 8,
+              enableWheelZoom : false,
+              enableDragPan : true,
+              enableDblClickZoom : false,
+              mapMode : 0,
+              activateTrafficMap : false,
+              activateBicycleMap : false,
+              minMaxLevel : [ 3, 13 ],
+              size : new nhn.api.map.Size(600, 400),
+              detectCoveredMarker : true });
+          // ZOOM
+          var oSlider = new nhn.api.map.ZoomControl();
+          oMap.addControl(oSlider);
+          oSlider.setPosition({
+           top : 10,
+           left : 10
+          });
+          // LABEL
+          var oLabel = new nhn.api.map.MarkerLabel(); // - 마커 라벨 선언.
+          oMap.addOverlay(oLabel); // - 마커 라벨 지도에 추가. 기본은 라벨이 보이지 않는 상태로 추가됨.
+          // MARKER
+          var oSize = new nhn.api.map.Size(28, 37);
+          var oOffset = new nhn.api.map.Size(14, 37);
+          var oIcon = new nhn.api.map.Icon("http://static.naver.com/maps2/icons/pin_spot2.png", oSize, oOffset);
+          var oMarker = new nhn.api.map.Marker(oIcon, { title : "신화블루베리농장 북구 시례동 247-2" });
+          oMarker.setPoint(oPoint);
+          oMap.addOverlay(oMarker);
+          // EVENT
+          oMap.attach("mouseenter", function(oCustomEvent) {
+           var oTarget = oCustomEvent.target;
+           // 마커위에 마우스 올라간거면
+           if (oTarget instanceof nhn.api.map.Marker) {
+            var oMarker = oTarget;
+            oLabel.setVisible(true, oMarker); // - 특정 마커를 지정하여 해당 마커의 title을 보여준다.
+           }
+          });
+
+          oMap.attach("mouseleave", function(oCustomEvent) {
+           var oTarget = oCustomEvent.target;
+           // 마커위에서 마우스 나간거면
+           if (oTarget instanceof nhn.api.map.Marker) {
+            oLabel.setVisible(false);
+           }
+          });
+         </script>
+          
+          
+      </div>
+</div>
