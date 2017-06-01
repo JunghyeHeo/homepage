@@ -2,14 +2,14 @@
 module.exports = function(app, fs)
 {
      app.get('/main',function(req,res){
-         fs.readFile(__dirname + "/../view/body.html", function(err, data) {
+         fs.readFile("body.html", function(err, data) {
              res.writeHead(200,{'content-type':'text/html'});
              res.end(data);
          })
      });
 
     app.get('/img',function(req,res){
-         fs.readFile(__dirname + "/../view/img/signin.jpg", function(err, data) {
+         fs.readFile("signin.jpg", function(err, data) {
              res.writeHead(200,{'content-type':'text/html'});
              res.end(data);
          })
