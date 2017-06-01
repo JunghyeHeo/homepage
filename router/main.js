@@ -1,19 +1,16 @@
 // module.exports 는 모듈을 생성하는 부분으로 다른 파일에서 require 할 수 있다.
 module.exports = function(app, fs)
 {
-
      app.get('/',function(req,res){
          fs.readFile(__dirname + "/../view/body.html", function(err, data) {
-             console.log("Hello");
-             //res.writeHead(200,{'content-type':'text/html'});
+             res.writeHead(200,{'content-type':'text/html'});
              res.end(data);
          })
      });
 
     app.get('/img',function(req,res){
          fs.readFile(__dirname + "/../view/img/signin.jpg", function(err, data) {
-             console.log("222");
-             //res.writeHead(200,{'content-type':'text/html'});
+             res.writeHead(200,{'content-type':'image/jpg'});
              res.end(data);
          })
      });
