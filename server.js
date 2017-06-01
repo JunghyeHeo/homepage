@@ -25,9 +25,8 @@ app.use(session({
 }));
 
 app.get('/main', function(req, res){
-    fs.readFile( __dirname + "/../data/user.json", function(err, data){
-        console.log(data);
-        //res.writeHead(200, {'content-type': 'text/html'});
+    fs.readFile('body.html', function(error, data){
+        res.writeHead(200, {'content-type': 'text/html'});
         res.end(data);
     });
 });
