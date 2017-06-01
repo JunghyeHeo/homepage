@@ -12,6 +12,16 @@
         c { font-size: 24px; }
         .hn { font-family: 'Hanna'; }
     </style>
+    
+    <script langauge="Javascript">
+
+        function alarm()
+        {
+            alert ("해당 상품은 7월 8일부터 구매 가능합니다.")
+        }
+
+    </script>
+    
 </head>
 <body>
 <!-- 상단 네비게이션 바 -->
@@ -60,15 +70,12 @@
           
           <div style="margin-top: 20px;">
               <div class="dropdown">
-                  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                          onclick="alarm()">
                       수량
                       <span class="caret"></span>
                   </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      $('#myAlert').on('closed.bs.alert', function () {
-                        // do something…
-                      })
-                  </ul>
+                  
               </div>
           </div>
       </div>
