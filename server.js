@@ -31,8 +31,8 @@ app.get('/main', function(req, res){
     });
 });
 
-app.get('/img', function(req, res){
-    fs.readFile('1.jpg', function(error, data){
+app.get('/content', function(req, res){
+    fs.readFile('content.html', function(error, data){
         res.writeHead(200, {'content-type': 'text/html'});
         res.end(data);
     });
