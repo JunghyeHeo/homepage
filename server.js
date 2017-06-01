@@ -37,3 +37,10 @@ app.get('/content', function(req, res){
         res.end(data);
     });
 });
+
+app.get('/inquiry', function(req, res){
+    fs.readFile('inquiry.html', function(error, data){
+        res.writeHead(200, {'content-type': 'text/html'});
+        res.end(data);
+    });
+});
