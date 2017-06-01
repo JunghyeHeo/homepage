@@ -42,58 +42,7 @@
               
           <p class="hn">찾아 오시는 길</p>
           
-                  <div id="map" style="border:1px solid #000;"></div>
-        <script type="text/javascript">
-        //http://map.naver.com/api/geocode.php?key=ac4836e43fc3046ea25c0e7c6db02be3&query=울산광역시 북구 시례동 247-2
-          var oPoint = new nhn.api.map.TM128(522180, 334652);
-          var defaultLevel = 11;
-          var oMap = new nhn.api.map.Map(document.getElementById("map"), { 
-              point : oPoint,
-              zoom : 8,
-              enableWheelZoom : false,
-              enableDragPan : true,
-              enableDblClickZoom : false,
-              mapMode : 0,
-              activateTrafficMap : false,
-              activateBicycleMap : false,
-              minMaxLevel : [ 3, 13 ],
-              size : new nhn.api.map.Size(600, 400),
-              detectCoveredMarker : true });
-          // ZOOM
-          var oSlider = new nhn.api.map.ZoomControl();
-          oMap.addControl(oSlider);
-          oSlider.setPosition({
-           top : 10,
-           left : 10
-          });
-          // LABEL
-          var oLabel = new nhn.api.map.MarkerLabel(); // - 마커 라벨 선언.
-          oMap.addOverlay(oLabel); // - 마커 라벨 지도에 추가. 기본은 라벨이 보이지 않는 상태로 추가됨.
-          // MARKER
-          var oSize = new nhn.api.map.Size(28, 37);
-          var oOffset = new nhn.api.map.Size(14, 37);
-          var oIcon = new nhn.api.map.Icon("http://static.naver.com/maps2/icons/pin_spot2.png", oSize, oOffset);
-          var oMarker = new nhn.api.map.Marker(oIcon, { title : "신화블루베리농장 북구 시례동 247-2" });
-          oMarker.setPoint(oPoint);
-          oMap.addOverlay(oMarker);
-          // EVENT
-          oMap.attach("mouseenter", function(oCustomEvent) {
-           var oTarget = oCustomEvent.target;
-           // 마커위에 마우스 올라간거면
-           if (oTarget instanceof nhn.api.map.Marker) {
-            var oMarker = oTarget;
-            oLabel.setVisible(true, oMarker); // - 특정 마커를 지정하여 해당 마커의 title을 보여준다.
-           }
-          });
-
-          oMap.attach("mouseleave", function(oCustomEvent) {
-           var oTarget = oCustomEvent.target;
-           // 마커위에서 마우스 나간거면
-           if (oTarget instanceof nhn.api.map.Marker) {
-            oLabel.setVisible(false);
-           }
-          });
-         </script>
+          <table cellpadding="0" cellspacing="0" width="462"> <tr> <td style="border:1px solid #cecece;"><a href="http://map.naver.com/?mpx=08410680%3A35.2450682%2C129.0868868%3AZ11%3A0.0209730%2C0.0099581&searchCoord=38e24fc5d619fb4d0998642ad0426579937245dfa88a889e05143664aa01c946&query=67aA7IKw64yA7ZWZ6rWQ&menu=location&tab=1&lng=8f8f1c0ab8a24022ec34c8523247bf49&mapMode=0&lat=1373dcc0420356d208c3f3041503d086&dlevel=11&enc=b64" target="_blank"><img src="http://prt.map.naver.com/mashupmap/print?key=p1496342013389_1144680351" width="460" height="340" alt="지도 크게 보기" title="지도 크게 보기" border="0" style="vertical-align:top;"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2017.6.2</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="http://map.naver.com/?mpx=08410680%3A35.2450682%2C129.0868868%3AZ11%3A0.0209730%2C0.0099581&searchCoord=38e24fc5d619fb4d0998642ad0426579937245dfa88a889e05143664aa01c946&query=67aA7IKw64yA7ZWZ6rWQ&menu=location&tab=1&lng=8f8f1c0ab8a24022ec34c8523247bf49&mapMode=0&lat=1373dcc0420356d208c3f3041503d086&dlevel=11&enc=b64" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
           
           
       </div>
